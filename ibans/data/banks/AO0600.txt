@@ -1,0 +1,25 @@
+Bank Code|Bank Name|Sigla|SWIFT/BIC
+0040|Banco Angolano de Investimentos, S.A.|BAI|BAIPAOLU
+0053|Banco Angolano de Negócios e Comércio, S.A.|BANC|ANCEAOLU
+0048|Banco BAI Micro Finanças, S.A.|BMF|NOSAAOLU
+0051|Banco BIC, S.A.|BIC|BCCBAOLU
+0004|Banco Caixa Geral Totta de Angola, S.A.|BCGTA|BCGTAOLU
+0043|Banco Comercial Angolano, S.A.|BCA|COMLAOLU
+0059|Banco Comercial do Huambo, S.A.|BCH|BCHUAOLU
+0005|Banco de Comércio e Indústria, S.A.|BCI|BCIDAOLU
+0054|Banco de Desenvolvimento de Angola, S.A.|BDA|BDAAAOLU
+0006|Banco de Fomento Angola, S.A.|BFA|BMFXAOLU
+0052|Banco de Negócios Internacional, S.A.|BNI|BNICAOLU
+0010|Banco de Poupança e Crédito, S.A.|BPC|BPCLAOLU
+0061|Banco de Poupança e Promoção Habitacional, S.A.|BPPH|
+0045|Banco Espírito Santo Angola, S.A.|BESA|BESCAOLU
+0047|Banco Keve, S.A.|KEVE|BRDKAOLU
+0057|Banco Kwanza Investimento, S.A.|BKI|BQCAAOLU
+0034|Banco Millennium Angola, S.A.|BMA|
+0055|Banco Privado Atlântico, S.A.|BPA|PRTLAOLU
+0044|Banco Sol, S.A.|BSOL|SOLOAOLU
+0062|Banco Valor, S.A.|BVB|BVBXAOLU
+0056|Banco VTB África, S.A.|VTB|VTBLAOLU
+0058|Finibanco Angola, S.A.|FNB|FBCOAOLU
+0060|Standard Bank de Angola, S.A.|SBA|SBICAOLU
+0063|Standard Chartered Bank de Angola, S.A.|SCBA|

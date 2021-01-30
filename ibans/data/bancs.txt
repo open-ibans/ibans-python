@@ -1,0 +1,26 @@
+Nome completo	Sigla	Código SWIFT	Website	Comentários
+Banco Angolano de Investimentos	BAI	BAIPAOLUXXX	http://www.bancobai.ao/	Banco de serviços completos
+Banco Angolano de Negócios e Comércio	BANC	ANCEAOLUXXX	http://www.banc.co.ao/	-
+Banco BIC Angola	BIC	BCCBAOLUXXX	http://www.bancobic.ao/	-
+Banco Comercial Angolano	BCA	COMLAOLUXXX	http://www.bca.co.ao/	-
+Banco de Comércio e Indústria	BCI	BCIDAOLUXXX	http://www.bci.ao/	Detido pelo Estado em 91%
+Banco de Desenvolvimento de Angola	BDA	BDAAAOLUXXX	http://www.bda.ao/	Propriedade do Estado
+Banco Económico (Angola)	-	BESCAOLUXXX	http://www.bancoeconomico.ao	Rebatizado como BESA
+Banco de Fomento Angola	BFA	BMFXAOLUXXX	http://www.bfa.ao/	Grupo BPI 50.1%, Unitel S.A. 49.9%
+Banco de Investimento Rural	BIR	BIRVAOLUXXX	http://www.bir.ao	Banco de capital privado
+Banco Privado Atlântico	BPA	PRTLAOLUXXX	http://www.atlantico.ao/	-
+Banco de Poupança e Crédito S.A.R.L.	BPC	BPCLAOLUXXX	http://www.bpc.ao/	Propriedade do Estado
+Banco de Negócios Internacional	BNI	BNICAOLUXXX	http://www.bni.ao/	-
+Banco Keve	-	BRDKAOLUXXX	http://www.bancokeve.ao/	-
+Banco Prestígio S.A	BPR	PRTSAOLU	https://web.archive.org/web/20180801061849/http://www.bancoprestigio.ao/	O Banco de Investimento em Angola
+Banco Sol	-	SOLOAOLUXXX	https://web.archive.org/web/20160202083226/http://www.bancosol.ao/	-
+Banco Caixa Geral Angola	-	BCGTAOLUXXX	http://www.caixatotta.ao	-
+Banco Millennium Atlântico	-	BCOMAOLUXXX	https://www.atlantico.ao	Millennium BCP (Portugal) 52.7%, Sonangol 31.5%, Banco Privado Atlântico 15.8%
+Banco VTB-África	-	VTBLAOLUXXX	http://www.vtb.ao	VTB Bank
+Finibanco Angola S.A.	-	FBCOAOLUXXX	http://www.finibanco.co.ao/	Montepio Group
+Banco BAI Micro Finanças	BMF	NOSAAOLUXXX	http://www.bancobmf.ao/	Anteriormente era Novo Banco
+Banco Kwanza Invest	-	BQCAAOLUXXX	http://www.bancokwanzainvest.com	Anteriormente chamado Quantum
+Banco Comercial do Huambo	-	BCHUAOLUXXX	http://www.bch.co.ao/	-
+Standard Bank Angola	SBA	SBICAOLUXXX	http://www.standardbank.co.ao	-
+Banco de Poupança e Promoção Habitacional	BPPH	-	-	-
+Banco Valor S.A.	-	BVBXAOLUXXX	https://www.bancovalor.ao/	-
