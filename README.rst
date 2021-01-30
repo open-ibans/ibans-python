@@ -57,34 +57,32 @@ to parse an iban just call
     
     >>> import ibans
     >>> iban =  ibans.parse("AO06005500009209313310152")
+
     >>> iban.country
-    Angola
+    'Angola'
+
     >>> iban.country_code
-    AO
+    'AO'
     >>> iban.check_digit
-    06
+    '06'
+
     >>> iban.basic_bank_account_number
     005500009209313310152
+
     >>> iban.bank_code
-    0055
+    '0055'
+
     >>> iban.account_number
-    00009209313310152
+    '00009209313310152'
+
     >>> iban.bank_name
-    Banco Privado Atlântico, S.A.
+    'Banco Privado Atlântico, S.A.'
+
     >>> iban.sigla
-    BPA
+    'BPA'
+
     >>> iban.swift_bic
-    PRTLAOLU
-    >>> iban.branch_code
-    None
-    >>> iban.account_type
-    None
-    >>> iban.account_holder
-    None
-    >>> iban.balance_account_number
-    None
-    >>> iban.currency_code
-    None
+    'PRTLAOLU'
 
 -----------
 Format IBAN
