@@ -1,6 +1,9 @@
 =======
 ibans
 =======
+
+.. |package| image:: https://github.com/iltoningui/ibans-python/workflows/Python%20package/badge.svg?branch=main&style=flat
+
 A simple yet powerfull package for validating parsing ibans
 
 ========
