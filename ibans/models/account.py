@@ -29,24 +29,24 @@ class Account:
 
     @property
     def number(self):
-        return self.number
+        return self.__number
 
     @property
     def account_type(self):
-        return self.account_type
+        return self.__account_type
 
     @property
     def holder(self):
-        return self.holder
+        return self.__holder
 
     @property
     def currency_code(self):
-        return self.currency_code
+        return self.__currency_code
 
     @property
     def balance_account(self):
-        return self.balance_account
+        return self.__balance_account
 
     @property
     def owner_account_number(self):
-        return self.owner_account_number
+        return self.__owner_account_number

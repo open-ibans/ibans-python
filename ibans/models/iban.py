@@ -1,5 +1,11 @@
-from models import IbanFormat
-from specs_pb2 import IbanFormatSpec
+import re
+from re import Pattern
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from specs_pb2 import IbanFormatSpec
+    from ibans import Bank, Account, Country
+from .iban_format import IbanFormat
 
 
 class Iban:
@@ -7,107 +13,106 @@ class Iban:
     This class represents a parsed IBAN
     """
     def __init__(
-            self, formats: IbanFormatSpec,
-            country_code: str, check_digit: str,
-            basic_bank_account_number: str, country: str,
-            **kwargs):
+            self, check_digit: str, basic_bank_account_number: str,
+            formats: 'IbanFormatSpec',
+            bank: 'Bank', account: 'Account', country: 'Country'):
         """
         __init__ Constructs an IBAN
 
         Constructs an IBAN providing its format and rest of data
 
-        :param formats: A list of ints with the positions of the spaces
-        :type formats: list
-        :param country_code: A two letter country code
-        :type country_code: str
-        :param check_digit: The country two number check code
+        :param check_digit:The country two number check code
         :type check_digit: str
         :param basic_bank_account_number: The BBAN (Basic Bank Account Number) the number that uniquely
                 identifies an account in the country
         :type basic_bank_account_number: str
-        :param country: Name of the country
-        :type country: str
+        :param formats: Iban Formats
+        :type formats: IbanFormatSpec
+        :param bank: Bank data
+        :type bank: Bank
+        :param account: Account information
+        :type account: Account
+        :param country: Country data
+        :type country: Country
         """
 
-        self.__iban = kwargs.get('iban', None)
-        self.__formats = kwargs.get('formats', None)
-        self.__bank = kwargs.get('bank', None)
-        self.__country = kwargs.get('country', None)
-        self.__account = kwargs.get('account', None)
-        self.__check_digit = kwargs.get('checkDigi', None)
-        self.__basic_bank_account_number = kwargs.get('basicBankAccountNumber', None)
+        self.__check_digit: str = check_digit
+        self.__basic_bank_account_number: str = basic_bank_account_number
+        self.__formats: 'IbanFormatSpec' = formats
+        self.__bank: 'Bank' = bank
+        self.__account: 'Account' = account
+        self.__country: 'Country' = country
 
-        self.__iban_format: list = iban_format
-        self.country: str = country
-        self.country_code: str = country_code
-        self.check_digit: str = check_digit
-        self.basic_bank_account_number: str = bban
+    @property
+    def check_digit(self):
+        return self.__check_digit
 
-        self.bank_code: str = kwargs.get('bank_code', None)
-        self.account_number: str = kwargs.get('account_number', None)
-        self.bank_name: str = kwargs.get('bank_name', None)
-        self.sigla: str = kwargs.get('sigla', None)
-        self.swift_bic: str = kwargs.get('swift_bic', None)
-        self.branch_code: str = kwargs.get('branch_code', None)
-        self.account_type: str = kwargs.get('account_type', None)
-        self.account_holder: str = kwargs.get('account_holder', None)
-        self.balance_account_number: str =\
-            kwargs.get('balance_account_number', None)
-        self.currency_code: str = kwargs.get('currency_code', None)
+    @property
+    def basic_bank_account_number(self):
+        return self.__basic_bank_account_number
+
+    @property
+    def formats(self):
+        return self.__formats
+
+    @property
+    def bank(self):
+        return self.__bank
+
+    @property
+    def account(self):
+        return self.__account
+
+    @property
+    def country(self):
+        return self.__country
 
     def __str__(self) -> str:
         """
-        Returns a string representing the iban
+        __str__ Returns a string representing the iban
 
         :return: The IBAN as a string
         :rtype: str
         """
 
-        return self.country_code + self.check_digit\
-            + self.basic_bank_account_number
+        return self.country.code + self.check_digit + self.basic_bank_account_number
 
-    def format(
-            self, format: IbanFormat) -> str:
+    def format(self, iban_format: 'IbanFormat') -> str:
         """
-        Formats an IBAN
+        format Format Formats an IBAN
 
         Formats IBAN as specified per country
 
-        Parameters:
-            format (IbanFormat): The printing format
-
-        Returns:
-            str: Formated string
+        :params iban_format: Iban format
+        :type iban_format: str
+        :return: Format iban string
+        :rtype: str
         """
 
-        formated_iban = self.__iban_formatter(format=format)
-        return formated_iban
+        iban = self.__iban_formatter(iban_format=iban_format)
+        return iban
 
-    def __iban_formatter(
-            self, format: IbanFormat) -> str:
+    def __iban_formatter(self, iban_format: 'IbanFormat') -> str:
         """
-        formats the iban by putting spaces inside the string
+        __iban_formatter formats the iban by putting spaces inside the string
 
-        :param format: the format type
-        :type format: IbanFormat
+        :param iban_format: the format type
+        :type iban_format: IbanFormat
         :return: The IBAN as a formatted string
         :rtype: str
         """
-        is_print_hidden = format == IbanFormat.PRINT_HIDDEN
-        is_electronic_hidden = format == IbanFormat.ELECTRONIC_HIDDEN
-        is_print = format == IbanFormat.PRINT
+        is_hidden: bool = iban_format == IbanFormat.PRINT_HIDDEN or iban_format == IbanFormat.ELECTRONIC_HIDDEN
+        is_print: bool = iban_format == IbanFormat.PRINT or iban_format == IbanFormat.PRINT_HIDDEN
+        basic_bank_account_number = self.basic_bank_account_number
 
-        if is_print_hidden or is_electronic_hidden:
-            bban_length = len(self.basic_bank_account_number) - 4
+        if is_hidden:
+            bban_length = len(basic_bank_account_number) - 4
             bban = "*******************************"
-            bban = bban[:bban_length] + self.basic_bank_account_number[-4:]
-        else:
-            bban = self.basic_bank_account_number
+            basic_bank_account_number = bban[:bban_length] + basic_bank_account_number[-4:]
 
-        new_iban = f"{self.country_code}{self.check_digit}{bban}"
+        iban = f"{self.country.code}{self.check_digit}{basic_bank_account_number}"
+        if is_print:
+            pattern: Pattern = re.compile(self.formats.print.pattern)
+            iban = pattern.sub(self.formats.print.replacement.replace("$", "\\"), iban)
 
-        if is_print or is_print_hidden:
-            for pos in self.__iban_format:
-                new_iban = new_iban[:pos] + ' ' + new_iban[pos:]
-
-        return new_iban
+        return iban

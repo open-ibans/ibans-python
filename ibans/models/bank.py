@@ -2,7 +2,7 @@ class Bank:
     """
     Represents a bank in a country
     """
-    def __init__(self, code: str, name: str, branch: str = None, short_name: str = None, swift: str = None):
+    def __init__(self, code: str, name: str = None, branch: str = None, short_name: str = None, swift: str = None):
         self.__name = name
         self.__code = code
         self.__branch = branch
@@ -11,6 +11,7 @@ class Bank:
         """Constructs a bank object
         
         Provided the bank national code and rest of information
+        
         :param code: Bank national code
         :type code: str
         :param name: bank name
@@ -20,7 +21,7 @@ class Bank:
         :param short_name: Bank initials or short name
         :type short_name: str
         :param swift: Bank SWIFT/BIC code
-        type swift: str
+        :type swift: str
         """
 
     @property
