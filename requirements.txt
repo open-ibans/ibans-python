@@ -13,3 +13,5 @@ Pygments==2.7.4
 pyparsing==2.4.7
 pytest==6.2.1
 toml==0.10.2
+google~=3.0.0
+setuptools~=52.0.0
