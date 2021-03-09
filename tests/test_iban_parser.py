@@ -18,6 +18,6 @@ class TestIbanParser:
                 continue
             iban_str = iban_str.rstrip()
             iban = ibans.parse(iban_str)
-            assert iban.country_code == country_code
+            assert iban.country.code == country_code
             assert iban.check_digit == check_digit
             assert iban.basic_bank_account_number == bban
