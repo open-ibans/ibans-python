@@ -57,30 +57,30 @@ to parse an iban just call
     
     >>> import ibans
     >>> iban =  ibans.parse("AO06005500009209313310152")
-
+    >>> 
     >>> iban.country
     'Angola'
-
+    >>> 
     >>> iban.country_code
     'AO'
     >>> iban.check_digit
     '06'
-
+    >>> 
     >>> iban.basic_bank_account_number
     005500009209313310152
-
+    >>> 
     >>> iban.bank_code
     '0055'
-
+    >>> 
     >>> iban.account_number
     '00009209313310152'
-
+    >>> 
     >>> iban.bank_name
     'Banco Privado Atlântico, S.A.'
-
+    >>> 
     >>> iban.sigla
     'BPA'
-
+    >>> 
     >>> iban.swift_bic
     'PRTLAOLU'
 
@@ -93,10 +93,13 @@ Formating example
 
     >>> from ibans import Iban, IbanFormat
     >>> iban =  ibans.parse("AO06 0055 0000 9209 3133 1015 2")
+    >>> 
     >>> iban.format(IbanFormat.PRINT)      
     'AO06 0055 0000 9209 3133 1015 2'
+    >>> 
     >>> iban.format(IbanFormat.PRINT_HIDDEN)      
     'AO06 **** **** **** **** *015 2'
+    >>> 
     >>> iban.format(IbanFormat.ELECTRONIC)       
     'AO06005500009209313310152'
 
@@ -106,6 +109,7 @@ Formating example for (Belgium)
 
     >>> from ibans import Iban, IbanFormat
     >>> iban =  ibans.parse("BE71096123456769")
+    >>> 
     >>> iban.format(IbanFormat.PRINT)
     'BE71 096 1 2345 67 69'
 
@@ -115,6 +119,7 @@ Formating example for (Cyprus)
 
     >>> from ibans import Iban, IbanFormat
     >>> iban =  ibans.parse("CY17002001280000001200527600")
+    >>> 
     >>> iban.format(IbanFormat.PRINT)
     'CY17 002 0 0128 0000 0012 0052 7600'
 
