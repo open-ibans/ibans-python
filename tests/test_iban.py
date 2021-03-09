@@ -15,7 +15,7 @@ class TestIban:
     def test_iban_country_code(self, ao_bai_iban):
         iban = ibans.parse(ao_bai_iban)
 
-        assert iban.country_code == "AO"
+        assert iban.country.code == "AO"
 
     def test_iban_basic_bank_account_number(self, ao_bai_iban):
         iban = ibans.parse(ao_bai_iban)
@@ -25,17 +25,17 @@ class TestIban:
     def test_iban_bank_code(self, ao_atlantico_iban):
         iban = ibans.parse(ao_atlantico_iban)
 
-        assert iban.bank_code == "0055"
+        assert iban.bank.code == "055"
 
     def test_iban_account_number(self, ao_bai_iban):
         iban = ibans.parse(ao_bai_iban)
 
-        assert iban.account_number == "00008043114110135"
+        assert iban.account.number == "80431141"
 
     def test_iban_country(self, ao_bai_iban):
         iban = ibans.parse(ao_bai_iban)
 
-        assert iban.country == "Angola"
+        assert iban.country.name == "Angola"
 
     def test_iban_check_digit(self, ao_bai_iban):
         iban = ibans.parse(ao_bai_iban)

@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package specs;
+
+message BankData {
+    string name = 2;
+    string short_name = 3;
+    string code = 1;
+    string swift = 4;
+}
+
+message Format {
+    string pattern = 1;
+    string replacement = 2;
+}
+
+message PatternData {
+    string pattern = 1;
+    string data = 2;
+}
+
+message IbanFormatSpec {
+    Format print = 1;
+}
+
+message IbanSpec {
+    uint32 country_code = 1;
+    string country_name = 2;
+    string iban_pattern = 3;
+    string bban_pattern = 4;
+    string country_check_digits_pattern = 5;
+    PatternData reserved_fields = 6;
+    uint32 length = 7;
+    IbanFormatSpec formats = 8;
+    uint32 check_digit = 9;
+    uint32 bank_code = 10;
+    uint32 account_number = 11;
+    uint32 branch_code = 12;
+    uint32 account_type = 13;
+    uint32 account_holder_number = 14;
+    uint32 balance_account_number = 15;
+    uint32 currency_code  = 16;
+    uint32 owner_account_number  = 17;
+}
+
+message IbansSpecs {
+    map<string, IbanSpec> specs = 1;
+}
+
+message BanksData {
+    map<string, BankData> banks = 1;
+}
